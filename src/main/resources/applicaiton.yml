@@ -1,0 +1,32 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# Overriding logic applicable here,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Reference for command spring boot properties can be found at
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+#Default port is 8761
+server:
+  port: 8761
+
+spring:
+  application:
+    name: commute-service-discovery
+
+management:
+  context-path: /management
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  serviceUrl:
+    defaultZone: http://localhost:8761
