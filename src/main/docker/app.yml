@@ -1,0 +1,11 @@
+version: '2'
+services:
+  commute-service-discovery:
+    image: dockerxya/commute-service-discovery
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SECURITY_USER_PASSWORD=admin
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://commute-dev:admin@discovery:8080/eureka
+    ports:
+      - 9000:8080
+      - 8005:8000 # Port for remote debugging such as on IDE
